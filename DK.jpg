@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Donkey Kong Flippity 4</title>
+
+<style>
+body {
+    margin: 0;
+    background: linear-gradient(45deg, #ff0000, #ffaa00);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    font-family: Impact, sans-serif;
+    overflow: hidden;
+}
+
+h1 {
+    color: yellow;
+    font-size: 50px;
+    text-shadow: 4px 4px black;
+    margin-bottom: 30px;
+}
+
+.dk {
+    width: 80%;
+    max-width: 900px;
+    animation: backflip 1.2s linear infinite;
+    transform-origin: center;
+}
+
+@keyframes backflip {
+    0%   { transform: rotate(0deg); }
+    100% { transform: rotate(-360deg); }
+}
+
+button {
+    margin-top: 30px;
+    padding: 15px 40px;
+    font-size: 20px;
+    background: black;
+    color: yellow;
+    border: 3px solid yellow;
+    border-radius: 12px;
+    cursor: pointer;
+}
+
+button:hover {
+    background: yellow;
+    color: black;
+}
+</style>
+</head>
+<body>
+
+<h1>DONKEY KONG FLIPPITY 4</h1>
+
+<img src="dk.jpg" class="dk" id="dk">
+
+<button onclick="toggleFlip()">Activate Mega Flip</button>
+
+<script>
+let flipping = true;
+
+function toggleFlip() {
+    const dk = document.getElementById("dk");
+    if (flipping) {
+        dk.style.animation = "none";
+    } else {
+        dk.style.animation = "backflip 1.2s linear infinite";
+    }
+    flipping = !flipping;
+}
+</script>
+
+</body>
+</html>
