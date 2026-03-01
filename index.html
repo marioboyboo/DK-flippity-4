@@ -6,50 +6,43 @@
 <title>Donkey Kong Flippity 4</title>
 
 <style>
-    body {
-        margin: 0;
-        background: linear-gradient(45deg, red, yellow);
-        font-family: Impact, sans-serif;
-        text-align: center;
-        color: white;
-    }
+body {
+    margin: 0;
+    background: black;
+    color: yellow;
+    font-family: Impact, sans-serif;
+    text-align: center;
+}
 
-    h1 {
-        font-size: 60px;
-        margin-top: 30px;
-        text-shadow: 4px 4px black;
-        animation: bounce 1s infinite alternate;
-    }
+h1 {
+    font-size: 50px;
+    margin-top: 40px;
+    text-shadow: 4px 4px red;
+}
 
-    @keyframes bounce {
-        from { transform: translateY(0px); }
-        to { transform: translateY(-20px); }
-    }
+video {
+    margin-top: 30px;
+    width: 90%;
+    max-width: 800px;
+    border: 6px solid yellow;
+    border-radius: 20px;
+}
 
-    video {
-        margin-top: 30px;
-        width: 80%;
-        max-width: 800px;
-        border: 8px solid black;
-        border-radius: 20px;
-        box-shadow: 0 0 40px black;
-    }
+button {
+    margin-top: 25px;
+    padding: 15px 30px;
+    font-size: 20px;
+    background: yellow;
+    color: black;
+    border: none;
+    border-radius: 10px;
+    cursor: pointer;
+}
 
-    button {
-        margin-top: 20px;
-        padding: 15px 40px;
-        font-size: 20px;
-        background: black;
-        color: yellow;
-        border: none;
-        border-radius: 10px;
-        cursor: pointer;
-    }
-
-    button:hover {
-        background: yellow;
-        color: black;
-    }
+button:hover {
+    background: red;
+    color: white;
+}
 </style>
 </head>
 
@@ -57,13 +50,16 @@
 
 <h1>DONKEY KONG FLIPPITY 4</h1>
 
-<video controls autoplay loop>
-    <source src="sora-s_69a48b7d79cc8191b55865d8c0001751.mp4" type="video/mp4">
-    Your browser does not support the video tag.
+<video controls playsinline>
+    <source src="video.mp4" type="video/mp4">
+    Your browser does not support video.
 </video>
 
 <br>
-<button onclick="alert('FLIPPITY MODE ACTIVATED!')">Activate Flippity</button>
+
+<button onclick="alert('FLIPPITY ACTIVATED 🍌')">
+Activate Flippity
+</button>
 
 </body>
 </html>
