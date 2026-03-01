@@ -8,40 +8,44 @@
 <style>
 body {
     margin: 0;
-    background: black;
-    color: yellow;
+    background: linear-gradient(45deg, red, orange);
     font-family: Impact, sans-serif;
     text-align: center;
+    color: yellow;
 }
 
 h1 {
-    font-size: 50px;
     margin-top: 40px;
-    text-shadow: 4px 4px red;
+    font-size: 55px;
+    text-shadow: 4px 4px black;
+}
+
+.video-container {
+    margin-top: 30px;
 }
 
 video {
-    margin-top: 30px;
     width: 90%;
-    max-width: 800px;
-    border: 6px solid yellow;
+    max-width: 900px;
+    border: 8px solid black;
     border-radius: 20px;
+    background: black;
 }
 
 button {
     margin-top: 25px;
-    padding: 15px 30px;
-    font-size: 20px;
-    background: yellow;
-    color: black;
-    border: none;
-    border-radius: 10px;
+    padding: 15px 40px;
+    font-size: 22px;
+    background: black;
+    color: yellow;
+    border: 3px solid yellow;
+    border-radius: 12px;
     cursor: pointer;
 }
 
 button:hover {
-    background: red;
-    color: white;
+    background: yellow;
+    color: black;
 }
 </style>
 </head>
@@ -50,12 +54,12 @@ button:hover {
 
 <h1>DONKEY KONG FLIPPITY 4</h1>
 
-<video controls playsinline>
-    <source src="video.mp4" type="video/mp4">
-    Your browser does not support video.
-</video>
-
-<br>
+<div class="video-container">
+    <video controls playsinline>
+        <source src="video.mp4" type="video/mp4">
+        Your browser does not support the video tag.
+    </video>
+</div>
 
 <button onclick="alert('FLIPPITY ACTIVATED 🍌')">
 Activate Flippity
