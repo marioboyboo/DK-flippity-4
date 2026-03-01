@@ -8,34 +8,39 @@
 <style>
 body {
     margin: 0;
-    background: linear-gradient(45deg, red, orange);
+    background: linear-gradient(45deg, #ff0000, #ffaa00);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
     font-family: Impact, sans-serif;
-    text-align: center;
-    color: yellow;
+    overflow: hidden;
 }
 
 h1 {
-    margin-top: 40px;
-    font-size: 55px;
+    color: yellow;
+    font-size: 50px;
     text-shadow: 4px 4px black;
+    margin-bottom: 30px;
 }
 
-.video-container {
-    margin-top: 30px;
-}
-
-video {
-    width: 90%;
+.dk {
+    width: 80%;
     max-width: 900px;
-    border: 8px solid black;
-    border-radius: 20px;
-    background: black;
+    animation: backflip 1.2s linear infinite;
+    transform-origin: center;
+}
+
+@keyframes backflip {
+    0%   { transform: rotate(0deg); }
+    100% { transform: rotate(-360deg); }
 }
 
 button {
-    margin-top: 25px;
+    margin-top: 30px;
     padding: 15px 40px;
-    font-size: 22px;
+    font-size: 20px;
     background: black;
     color: yellow;
     border: 3px solid yellow;
@@ -49,21 +54,27 @@ button:hover {
 }
 </style>
 </head>
-
 <body>
 
 <h1>DONKEY KONG FLIPPITY 4</h1>
 
-<div class="video-container">
-    <video controls playsinline>
-        <source src="video.mp4" type="video/mp4">
-        Your browser does not support the video tag.
-    </video>
-</div>
+<img src="dk.jpg" class="dk" id="dk">
 
-<button onclick="alert('FLIPPITY ACTIVATED 🍌')">
-Activate Flippity
-</button>
+<button onclick="toggleFlip()">Activate Mega Flip</button>
+
+<script>
+let flipping = true;
+
+function toggleFlip() {
+    const dk = document.getElementById("dk");
+    if (flipping) {
+        dk.style.animation = "none";
+    } else {
+        dk.style.animation = "backflip 1.2s linear infinite";
+    }
+    flipping = !flipping;
+}
+</script>
 
 </body>
 </html>
